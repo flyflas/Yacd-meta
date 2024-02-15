@@ -1,6 +1,7 @@
 import { createAsset } from 'use-asset';
 
-import prettyBytes from './pretty-bytes';
+// import prettyBytes from './pretty-bytes';
+import prettyMemoryBytes from './pretty-memory-bytes';
 export const chartJSResource = createAsset(() => {
   return import('~/misc/chart-lib');
 });
@@ -29,7 +30,7 @@ export const memoryChartOptions: import('chart.js').ChartOptions<'line'> = {
       ticks: {
         maxTicksLimit: 3,
         callback(value: number) {
-          return prettyBytes(value);
+          return prettyMemoryBytes(value);
         },
       },
     },

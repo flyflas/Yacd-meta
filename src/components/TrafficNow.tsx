@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import * as connAPI from '../api/connections';
 import { fetchData } from '../api/traffic';
 import prettyBytes from '../misc/pretty-bytes';
+import prettyMemoryBytes from '../misc/pretty-memory-bytes';
 import { getClashAPIConfig } from '../store/app';
 import { connect } from './StateProvider';
 import s0 from './TrafficNow.module.scss';
@@ -75,7 +76,7 @@ function useConnection(apiConfig) {
         upTotal: prettyBytes(uploadTotal),
         dlTotal: prettyBytes(downloadTotal),
         connNumber: connections.length,
-        mUsage: prettyBytes(memory),
+        mUsage: prettyMemoryBytes(memory),
       });
     },
     [setState]

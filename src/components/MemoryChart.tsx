@@ -42,6 +42,7 @@ export default connect(mapState)(MemoryChart);
 function MemoryChart({ apiConfig, selectedChartStyleIndex }) {
   const ChartMod = chartJSResource.read();
   const memory = fetchData(apiConfig);
+  console.log(memory);
   const { t } = useTranslation();
   const data = useMemo(
     () => ({
